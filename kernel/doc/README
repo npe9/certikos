@@ -1,0 +1,8 @@
+* Directory Oganization
+** ./boot/    : boot loader
+** ./dev/     : device drivers
+** ./include/ : header files used by more than more components
+** ./kern     : kernel
+** ./lib/     : libraries
+** ./test/    : test codes and scripts
+** ./virt/    : virtualization support

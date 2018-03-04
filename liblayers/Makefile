@@ -1,0 +1,60 @@
+FILES=\
+  lib/ExtensionalityAxioms.v \
+  lib/Lift.v \
+  lib/PowersetMonad.v \
+  lib/Comonad.v \
+  lib/Lens.v \
+  lib/Monad.v \
+  lib/OptionMonad.v \
+  lib/Functor.v \
+  lib/Decision.v \
+  lib/LogicalRelations.v \
+  \
+  logic/Structures.v \
+  logic/PseudoJoin.v \
+  logic/PseudoJoinReflection.v \
+  logic/LayerData.v \
+  logic/OptionOrders.v \
+  logic/Modules.v \
+  logic/Layers.v \
+  logic/Primitives.v \
+  logic/Semantics.v \
+  logic/Language.v \
+  logic/PTrees.v \
+  logic/PTreeModules.v \
+  logic/PTreeLayers.v \
+  logic/PTreeSemantics.v \
+  logic/LayerLogicImpl.v \
+  \
+  compcertx/CompcertStructures.v \
+  compcertx/ErrorMonad.v \
+  compcertx/AbstractData.v \
+  compcertx/LiftMem.v \
+  compcertx/LiftMemX.v \
+  compcertx/MemWithData.v \
+  compcertx/Stencil.v \
+  compcertx/StencilImpl.v \
+  compcertx/MakeProgram.v \
+  compcertx/MakeProgramImpl.v \
+  compcertx/ClightModules.v \
+  compcertx/GenSem.v \
+  compcertx/LiftValueDomain.v \
+  compcertx/LiftValueAnalysis.v \
+  compcertx/LiftDeadcodeproof.v \
+  compcertx/InitMem.v \
+  compcertx/Observation.v \
+  \
+  compat/CompatData.v \
+  compat/CompatPrimSem.v \
+  compat/CompatGenSem.v \
+  compat/CompatLayerDef.v \
+  compat/CompatLayerFacts.v \
+  compat/CompatLayerInvariants.v \
+  compat/CompatSemantics.v \
+  compat/CompatLayers.v \
+  compat/CompatExternalCalls.v \
+  compat/CompatClightSem.v \
+  compat/I64Layer.v \
+  compat/I64LayerAutosim.v \
+
+include ../subdir.mk

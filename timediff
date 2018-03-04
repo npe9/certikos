@@ -1,0 +1,37 @@
+#!/usr/bin/perl -w
+
+# Read the whole time log
+my %timelog;
+open TIMELOG, "< .timelog";
+while (<TIMELOG>) {
+	next unless /(.*?):(.*?) (.*?) (.*?) (.*?)/;
+	$timelog{$1}{$2} = $3 + $4;
+}
+close TIMELOG;
+
+# Use git rev-parse to analyse the command line
+sub rev_parse ($) {
+	my ($rev, $plus) = ($_[0] =~ /^(.*?)(\+?)$/);
+	$rev = `git rev-parse --short $rev`;
+	$rev or die "Usage: ./timediff [<before-rev> [<after-rev>]]";
+	chomp $rev;
+	return $rev . $plus;
+}
+
+# Obtain the revisions of interest
+my $pending = `git status --porcelain --untracked=no` ? 1 : 0;
+my $bspec = defined($ARGV[0]) ? $ARGV[0] : $pending ? "HEAD"  : "HEAD^";
+my $aspec = defined($ARGV[1]) ? $ARGV[1] : $pending ? "HEAD+" : "HEAD";
+
+# Print the differences
+my $bef = rev_parse($bspec);
+my $aft = rev_parse($aspec);
+my $total = 0;
+print STDERR "Showing differences between $bef..$aft\n";
+foreach (sort keys(%{$timelog{$bef}})) {
+	next unless exists $timelog{$aft}{$_};
+	my $diff = $timelog{$aft}{$_} - $timelog{$bef}{$_};
+	printf "%s: %+.2f\n", $_, $diff;
+	$total += $diff;
+}
+printf "total: %+.2f\n", $total;

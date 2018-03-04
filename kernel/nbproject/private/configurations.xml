@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="boot">
+        <df name="boot0">
+          <in>boot0.S</in>
+        </df>
+        <df name="boot1">
+          <in>boot1.S</in>
+          <in>boot1main.c</in>
+          <in>chainload.S</in>
+        </df>
+        <df name="lib">
+          <in>bios.h</in>
+          <in>biosdisk.c</in>
+          <in>console.c</in>
+          <in>console.h</in>
+          <in>cprintf.c</in>
+          <in>debug.c</in>
+          <in>debug.h</in>
+          <in>elf.h</in>
+          <in>ext2.h</in>
+          <in>fs.c</in>
+          <in>fs.h</in>
+          <in>gcc.h</in>
+          <in>int13.S</in>
+          <in>mboot.h</in>
+          <in>printfmt.c</in>
+          <in>stdarg.h</in>
+          <in>stdio.h</in>
+          <in>string.c</in>
+          <in>string.h</in>
+          <in>switch_mode.S</in>
+          <in>types.h</in>
+          <in>video.c</in>
+          <in>video.h</in>
+          <in>x86.h</in>
+        </df>
+        <df name="loader">
+          <in>exec_kernel.S</in>
+          <in>loader.c</in>
+        </df>
+      </df>
+      <df name="doc">
+      </df>
+      <df name="misc">
+        <df name="iso">
+          <df name="boot">
+            <df name="grub">
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="obj">
+        <df name="boot">
+          <in>boot0.asm</in>
+          <in>boot1.asm</in>
+          <in>loader.asm</in>
+        </df>
+        <df name="sys">
+          <df name="dev">
+          </df>
+          <df name="kern">
+          </df>
+          <df name="lib">
+          </df>
+          <df name="preinit">
+          </df>
+          <in>kernel.asm</in>
+        </df>
+        <df name="user">
+          <df name="idle">
+            <in>idle.asm</in>
+          </df>
+          <df name="lib">
+          </df>
+          <df name="pingpong">
+            <in>ding.asm</in>
+            <in>ping.asm</in>
+            <in>pong.asm</in>
+          </df>
+          <df name="profile">
+            <in>dummy.asm</in>
+            <in>unit.asm</in>
+          </df>
+          <df name="vmm">
+            <df name="dev">
+              <df name="i8042">
+              </df>
+              <df name="i8254">
+              </df>
+              <df name="i8259">
+              </df>
+              <df name="nvram">
+              </df>
+              <df name="serial">
+              </df>
+              <df name="virtio">
+              </df>
+            </df>
+            <df name="svm">
+            </df>
+            <df name="vmx">
+            </df>
+            <in>vmm.asm</in>
+          </df>
+        </df>
+      </df>
+      <df name="sys">
+        <df name="dev">
+          <in>pmap.c</in>
+          <in>pmap.h</in>
+          <in>svm_asm.S</in>
+          <in>tsc.c</in>
+          <in>tsc.h</in>
+        </df>
+        <df name="kern">
+          <in>_certikos.S</in>
+          <in>certikos.S</in>
+          <in>unimplemented.c</in>
+        </df>
+        <df name="lib">
+          <in>entry.S</in>
+          <in>gcc.h</in>
+          <in>seg.c</in>
+          <in>string.c</in>
+          <in>string.h</in>
+          <in>sysenter.h</in>
+          <in>sysenter_asm.S</in>
+          <in>trap.h</in>
+          <in>trap_asm.S</in>
+          <in>user.c</in>
+          <in>x86.c</in>
+          <in>x86.h</in>
+        </df>
+        <df name="preinit">
+          <df name="dev">
+            <in>ahci.c</in>
+            <in>ahci.h</in>
+            <in>console.c</in>
+            <in>console.h</in>
+            <in>disk.c</in>
+            <in>disk.h</in>
+            <in>intr.c</in>
+            <in>intr.h</in>
+            <in>pci.c</in>
+            <in>pci.h</in>
+            <in>pic.c</in>
+            <in>pic.h</in>
+            <in>sata_fis.h</in>
+            <in>serial.c</in>
+            <in>serial.h</in>
+            <in>timer.c</in>
+            <in>timer.h</in>
+            <in>tsc.c</in>
+            <in>tsc.h</in>
+            <in>vmx_asm.S</in>
+            <in>vmx_drv.c</in>
+            <in>vmx_drv.h</in>
+          </df>
+          <df name="lib">
+            <in>debug.c</in>
+            <in>debug.h</in>
+            <in>dprintf.c</in>
+            <in>elf.c</in>
+            <in>elf.h</in>
+            <in>ept.h</in>
+            <in>gcc.h</in>
+            <in>mboot.c</in>
+            <in>mboot.h</in>
+            <in>pmap.c</in>
+            <in>pmap.h</in>
+            <in>printfmt.c</in>
+            <in>queue.h</in>
+            <in>seg.c</in>
+            <in>seg.h</in>
+            <in>stdarg.h</in>
+            <in>string.c</in>
+            <in>string.h</in>
+            <in>timing.c</in>
+            <in>timing.h</in>
+            <in>trap.c</in>
+            <in>types.c</in>
+            <in>types.h</in>
+            <in>video.c</in>
+            <in>video.h</in>
+            <in>vmcs.h</in>
+            <in>vmx.h</in>
+            <in>vmx_x86.c</in>
+            <in>vmx_x86.h</in>
+            <in>x86.c</in>
+            <in>x86.h</in>
+          </df>
+          <in>preinit.c</in>
+          <in>preinit.h</in>
+        </df>
+      </df>
+      <df name="user">
+        <df name="idle">
+          <in>idle.c</in>
+        </df>
+        <df name="include">
+          <in>debug.h</in>
+          <in>gcc.h</in>
+          <in>hvm.h</in>
+          <in>hypercall.h</in>
+          <in>hypercall_svm.h</in>
+          <in>hypercall_vmx.h</in>
+          <in>proc.h</in>
+          <in>spinlock.h</in>
+          <in>stdarg.h</in>
+          <in>stdio.h</in>
+          <in>stdlib.h</in>
+          <in>string.h</in>
+          <in>syscall.h</in>
+          <in>sysenter.h</in>
+          <in>types.h</in>
+          <in>x86.h</in>
+        </df>
+        <df name="lib">
+          <in>atoi.c</in>
+          <in>debug.c</in>
+          <in>entry.S</in>
+          <in>printf.c</in>
+          <in>printfmt.c</in>
+          <in>proc.c</in>
+          <in>spinlock.c</in>
+          <in>string.c</in>
+          <in>sysenter.c</in>
+        </df>
+        <df name="pingpong">
+          <in>ding.c</in>
+          <in>ping.c</in>
+          <in>pong.c</in>
+        </df>
+        <df name="profile">
+          <in>dummy.c</in>
+          <in>unit.c</in>
+        </df>
+        <df name="vmm">
+          <df name="dev">
+            <df name="i8042">
+              <in>kbd.c</in>
+              <in>kbd.h</in>
+              <in>ps2.c</in>
+              <in>ps2.h</in>
+            </df>
+            <df name="i8254">
+              <in>pit.c</in>
+              <in>pit.h</in>
+            </df>
+            <df name="i8259">
+              <in>pic.c</in>
+              <in>pic.h</in>
+            </df>
+            <df name="nvram">
+              <in>bios.h</in>
+              <in>nvram.c</in>
+              <in>nvram.h</in>
+            </df>
+            <df name="serial">
+              <in>serial.c</in>
+              <in>serial.h</in>
+            </df>
+            <df name="virtio">
+              <in>mbr.h</in>
+              <in>pci.c</in>
+              <in>pci.h</in>
+              <in>virtio.c</in>
+              <in>virtio.h</in>
+              <in>virtio_blk.c</in>
+              <in>virtio_blk.h</in>
+            </df>
+          </df>
+          <df name="svm">
+            <in>svm.c</in>
+          </df>
+          <df name="vmx">
+            <in>vmx.c</in>
+          </df>
+          <in>main.c</in>
+          <in>vmm.c</in>
+          <in>vmm.h</in>
+          <in>vmm_dev.c</in>
+          <in>vmm_dev.h</in>
+        </df>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+            <option name="gdb_init_file"
+                    value="/home/hao/workspace/certikos/veri/link/kernel/.gdbinit"/>
+            <option name="gdb_source_dirs" value="sys:user:boot"/>
+            <option name="debug_command" value="gdb"/>
+            <option name="debug_dir"
+                    value="/home/hao/workspace/certikos/veri/link/kernel/."/>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

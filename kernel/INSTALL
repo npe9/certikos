@@ -1,0 +1,59 @@
+Installation Guide
+
+1. Grub2 + CertiKOS
+===================
+
+1.1 Prerequisite
+================
+Grub2, Xorriso
+
+1.2 Install
+===========
+cd certikos                        # change the current work directory to the
+                                   # root directory of CertiKOS source code
+make                               # build CertiKOS
+make iso                           # make a bootable disk image
+dd if=obj/certikos.img of=/dev/sdb # [optional] install the bootable disk image
+                                   # to a storage drive. sudo or root permission
+                                   # maybe required.
+
+2. Tiny bootloader + CertiKOS
+=============================
+
+2.1 Prerequisite
+================
+dd if=/dev/zero of=certikos.img bs=512 count=40960   # prepare a 20 MB blank raw
+                                                     # disk image
+fdisk certikos.img                                   # partition the disk image
+  x
+  h
+  16
+  s
+  63
+  c
+  130
+  r
+  n
+  p
+  1
+  select the default option
+  select the default option
+  a
+  1
+  w
+losetup -o `expr 2048 \* 512` /dev/loop0 certikos.img # create the file system
+mke2fs -j /dev/loop0                                  # on the disk image. sudo
+losetup -d /dev/loop0                                 # or root permission maybe
+                                                      # required.
+
+2.2 Install
+===========
+cd certikos                        # change the current work directory to the
+                                   # root directory of CertiKOS source code
+make                               # build CertiKOS
+cp certikos.img obj/
+make install_boot install_kern     # install the bootloader and the kernel to
+                                   # on the disk image
+dd if=obj/certikos.img of=/dev/sdb # [optional] install the disk image to a
+                                   # storage drive. sudo or root permission
+                                   # maybe required.

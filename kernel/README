@@ -1,0 +1,5 @@
+sudo apt-get install libc6-dev-i386
+
+
+Notice:
+* Our elf loader cannot initialize static variable. Thus, please make sure to initialize static variable manually in user process.

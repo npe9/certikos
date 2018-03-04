@@ -1,0 +1,42 @@
+        MM: MMTable; (**r table of the physical memory's information*)
+        MMSize: Z; (**r size of MMTable*)
+        vmxinfo: VMXInfo; (**r information of vmx*)
+        devout: DeviceOutput; (**r device output*)
+
+        CR3: globalpointer; (**r abstract of CR3, stores the pointer to page table*)
+        ti: trapinfo; (**r abstract of CR2, stores the address where page fault happens*)
+
+        pg: bool; (**r abstract of CR0, indicates whether the paging is enabled or not*)
+        ikern: bool; (**r pure logic flag, shows whether it's in kernel mode or not*)
+        ihost: bool; (**r logic flag, shows whether it's in the host mode or not*)         
+
+        HP: flatmem; (**r we model the memory from 1G to 3G as heap*)
+
+        AC : ContainerPool; (**r container tree for all agents *)
+
+        AT: ATable; (**r allocation table*)
+        nps: Z; (**r number of the pages*)
+        init: bool; (**r pure logic flag, show whether the initialization at this layer has been called or not*)
+        pperm: PPermT; (**r physical page permission table *)
+
+        PT: Z; (**r the current page table index*)
+        ptpool: PMapPool; (**r page table pool*)
+        idpde: IDPDE; (**r shared identity maps *)
+        ipt: bool; (**r pure logic flag, shows whether the current page map is the kernel's page map*)
+        LAT: LATable; (**r allocation table*)
+        smspool: SharedMemSTPool; (**r the shared-memory pool for IPC*)
+
+        kctxt: KContextPool; (**r kernel context pool*)
+        tcb: TCBPool; (*r thread control blocks pool*)                 
+        tdq: TDQueuePool; (**r thread queue pool*)
+        abtcb: AbTCBPool; (**r thread control blocks pool*)
+        abq: AbQueuePool; (**r thread queue pool*)
+        cid: Z; (**r current thread id*) 
+        syncchpool : SyncChanPool; (**r the channel pool for synchronous IPC*)
+
+        uctxt : UContextPool; (**r user context pool*)
+
+        ept: EPT; (**r nested page table for guest mode*)
+        vmcs: VMCS; (**r virtual machine control structure for current VM *)
+
+        vmx: VMX (**r VMX structure to store the extra registers of host *)

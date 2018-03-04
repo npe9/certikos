@@ -1,0 +1,25 @@
+(* *********************************************************************)
+(*                                                                     *)
+(*            The CertiKOS Certified Kit Operating System              *)
+(*                                                                     *)
+(*                   The FLINT Group, Yale University                  *)
+(*                                                                     *)
+(*  Copyright The FLINT Group, Yale University.  All rights reserved.  *)
+(*  This file is distributed under the terms of the Yale University    *)
+(*  Non-Commercial License Agreement.                                  *)
+(*                                                                     *)
+(* *********************************************************************)
+(* *********************************************************************)
+(*                                                                     *)
+(*           Layers of PM: Refinement Proof for PShareIntro           *)
+(*                                                                     *)
+(*          Ronghui Gu <ronghui.gu@yale.edu>                           *)
+(*                                                                     *)
+(*          Yale Flint Group                                           *)
+(*                                                                     *)
+(* *********************************************************************)
+
+(** This file provide the contextual refinement proof between MPTNew layer and PShareIntro layer*)
+Require Export ShareIntroGenDef.
+Require Export ShareIntroGenFresh.
+Require Export ShareIntroGenPassthrough.

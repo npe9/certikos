@@ -1,0 +1,60 @@
+#!/bin/bash
+
+WITH_COMPCERT=0
+if [ "$1" = --with-compcert ]; then
+    WITH_COMPCERT=1
+    shift
+fi
+
+MAKEOPTS="$@"
+
+process () {
+    dir=$1
+    makefile=$2
+    target=$3
+    echo $dir: Entering
+    pushd $dir
+    while ! make -f $makefile -q $target
+    do
+	echo $dir: Not up-to-date. Press CTRL+C to cancel now, ENTER otherwise
+	read
+	mkfifo fail
+	cat fail &
+	sleep 1
+	stdbuf -i0 -o0 -e0 make -f $makefile -k ${MAKEOPTS} $target 2>&1 |
+	stdbuf -i0 -e0 -o0 tee -a fail |
+	stdbuf -i0 -o0 -e0 grep $dir/ |
+	stdbuf -i0 -o0 -e0 sed -u 's!^.*/'$dir'/\([^"]*\).*$!\1!' |
+	{
+	    n=0
+	    while read f
+	    do
+		n=$(($n + 1))
+		echo $dir: $f: failed, opening ./pg number $n
+		{
+		    if ./pg $f
+			then
+			echo $dir: $f: done
+			else
+			echo $dir: $f: failed
+			fi
+		} &
+	    done
+	    echo $dir: Waiting for all $n ./pg to terminate
+	    wait
+	}
+	rm -f fail
+	echo $dir: all ./pg done
+    done
+    popd
+    echo $dir: Successfully left
+}
+
+if [ $WITH_COMPCERT -ne 0 ]; then
+    process compcert Makefile proof
+    process compcertx Makefile.strict proof
+else
+    process compcertx Makefile proof
+fi
+process liblayers Makefile all
+process mcertikos Makefile all

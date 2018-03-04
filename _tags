@@ -1,0 +1,4 @@
+true: use_menhir
+<**/*.cmx>: debug
+<**/*.native>: debug
+<mcertikos/driver/CertiKOSDriver.*{byte,native}>: use_unix,use_str

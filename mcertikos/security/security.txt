@@ -1,0 +1,59 @@
+sem3 = tsyscall_secure semantics
+sem2 = tsyscall semantics
+sem1 = mboot semantics
+world _ sem wi = sem + fixed initial input wi
+
+state_inv = secure_inv
+init = secure_inv'
+
+xobserve p s = all parts of state s that can influence the observer p
+observe_lasm p s = observer p's output buffer in state s
+world_observe obs = lift obs (do not observe anything about worlds)
+
+Theorem end_to_end_security : 
+    forall (sten : stencil) (CTXT kernel : module) (user_prog comb_prog : program),
+       CertiKOS.certikos = OK kernel ->
+       forall (make_user_prog : make_program sten CTXT (TSysCall.tsyscall ⊕ L64) = OK user_prog)
+              (make_comb_prog : make_program sten (CTXT ⊕ kernel) (MBoot.mboot ⊕ L64) = OK comb_prog),
+
+       (* liveness assumption *)
+       (forall p : principal,
+        principal_ok p ->
+        forall s : Asm.state,
+        init sten CTXT user_prog make_user_prog p s ->
+        state_inv sten CTXT user_prog make_user_prog p s ->
+        exists (s' : Asm.state) (t : trace),
+          Plus (sem2 user_prog) s t s' /\ active p s') ->
+
+       forall p : Z, p > 2 ->
+         CompCertBuiltins.BuiltinIdentsNorepet ->  (* assumption of CertiKOS_correct *)
+
+         forall wi : world,
+           exists sim : simulation (sem3 sten CTXT user_prog make_user_prog p)
+                                   (sem1 comb_prog)
+                                   (fun s => observe_lasm (cdata RData) p s)
+                                   (fun s => observe_lasm (cdata RData) p s),
+
+           forall (Si S1 : Asm.state) (t : trace),
+             initial_state (sem2 user_prog) Si -> Star (sem2 user_prog) Si t S1 ->
+             init sten CTXT user_prog make_user_prog p S1 ->
+
+             forall (S2 s1 s2 : Asm.state)
+                    (i1 i2 : sim_index (sem3 sten CTXT user_prog make_user_prog p)
+                                       (sem1 comb_prog)
+                                       (fun s => observe_lasm (cdata RData) p s)
+                                       (fun s => observe_lasm (cdata RData) p s) sim),
+               state_inv sten CTXT user_prog make_user_prog p S2 ->
+               init sten CTXT user_prog make_user_prog p S2 ->
+               xobserve p S1 = xobserve p S2 ->
+               sim i1 S1 s1 -> sim i2 S2 s2 ->
+
+               forall w1 w2 : world,
+                 state_beh_eq (world_sem int (sem1 comb_prog) wi)
+                              (world_sem int (sem1 comb_prog) wi)
+                              (fun s => world_observe (observe_lasm (cdata RData) p) s)
+                              (fun s => world_observe (observe_lasm (cdata RData) p) s) 
+                              (s1, w1) (s2, w2)
+
+Point of debate: should sim relate sem3 to sem1, or sem2 to sem1?
+

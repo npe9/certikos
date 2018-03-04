@@ -1,0 +1,34 @@
+Following instructions will create a disk image with following disk geometry parameters:
+* size in megabytes = 64
+* amount of cylinders = 130
+* amount of headers = 16
+* amount of sectors per track = 63
+
+1. dd if=/dev/zero of=certikos.img bs=512 count=`expr 130 \* 16 \* 63`
+
+2. fdisk certikos.img
+   x
+   h
+   16
+   s
+   63
+   c
+   130
+   r
+   n
+   p
+   1
+   select default option
+   select default option
+   a
+   1
+   w
+
+4. fdisk -l certikos.img
+   Note the start sector.
+
+5. sudo losetup -o `expr the start sector \* 512` /dev/loop0 certikos.img
+
+6. sudo mke2fs -j /dev/loop0
+
+7. sudo losetup -d /dev/loop0

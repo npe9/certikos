@@ -1,0 +1,289 @@
+<html>
+<head>
+  <style>
+
+    /* Copy-and-pasted from the other files (maybe we'll want to use a
+     * common CSS file?) */
+    body {
+      color: black; background: white;
+      margin-left: 5%; margin-right: 5%;
+    } 
+    h2 { margin-left: -5%;}
+    h3 { margin-left: -3%; }
+    h1,h2,h3 { font-family: sans-serif; }
+    hr { margin-left: -5%; margin-right:-5%; }
+    a:visited {color : #416DFF; text-decoration : none; font-weight : bold}
+    a:link {color : #416DFF; text-decoration : none; font-weight : bold}
+    a:hover {color : Red; text-decoration : underline; }
+    a:active {color : Red; text-decoration : underline; }
+
+    /* Specific to this file (to some extent) */
+    td.vfile { width: 25ex; }
+
+  </style>
+</head>
+<body>
+
+<h1 align="center">liblayers</h1>
+
+<h2>General-purpose libraries</h2>
+
+<table>
+  <tr>
+    <td class="vfile"><a href="html/liblayers.lib.ExtensionalityAxioms.html">ExtensionalityAxioms</a></td>
+    <td>Logical axioms we depend on</td>
+  </tr>
+  <tr>
+    <td class="vfile"><a href="html/liblayers.lib.Decision.html">Decision</a></td>
+    <td>Typeclass for decision procedures and basic instances</td>
+  </tr>
+  <tr>
+    <td class="vfile"><a href="html/liblayers.lib.LogicalRelations.html">LogicalRelations</a></td>
+    <td>Binary logical relations
+      (generalizes Coq's
+      <a href="https://coq.inria.fr/stdlib/Coq.Classes.Morphisms.html">
+        setoid rewriting</a>
+      and provides related tactics)
+    </td>
+  </tr>
+  <tr>
+    <td class="vfile"><a href="html/liblayers.lib.Functor.html">Functor</a></td>
+    <td>Functor typeclass and basic instances</td>
+  </tr>
+  <tr>
+    <td class="vfile"><a href="html/liblayers.lib.Monad.html">Monad</a></td>
+    <td>Monad typeclass and basic instances</td>
+  </tr>
+  <tr>
+    <td class="vfile"><a href="html/liblayers.lib.OptionMonad.html">OptionMonad</a></td>
+    <td>The <tt>option</tt> monad and related definitions</td>
+  </tr>
+  <tr>
+    <td class="vfile"><a href="html/liblayers.lib.PowersetMonad.html">PowersetMonad</a></td>
+    <td>The powerset monad (- <tt>-&gt; Type</tt>) and related definitions</td>
+  </tr>
+  <tr>
+    <td class="vfile"><a href="html/liblayers.lib.Lens.html">Lens</a></td>
+    <td>Lenses (generalized, first-class record fields)</td>
+  </tr>
+  <tr>
+    <td class="vfile"><a href="html/liblayers.lib.Lift.html">Lift</a></td>
+    <td>Lifting along lenses</td>
+  </tr>
+</table>
+
+<h2>Abstract layer calculus</h2>
+
+<table>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.OptionOrders.html">OptionOrders</a></td>
+  <td>Orders for the <tt>option</tt> monads</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.LayerData.html">LayerData</a></td>
+  <td>Categorical structure for our types of abstract states and simulation relations blueprints</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.Structures.html">Structures</a></td>
+  <td>Common mathematical structures used by the calculus</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.PseudoJoin.html">PseudoJoin</a></td>
+  <td>The "pseudojoin" structure satisfied by our &oplus; operators</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.Primitives.html">Primitives</a></td>
+  <td>Interface for types of primitive specifications</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.Modules.html">Modules</a></td>
+  <td>Interface for types of modules</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.Layers.html">Layers</a></td>
+  <td>Interface for types of layer specifications</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.Semantics.html">Semantics</a></td>
+  <td>Interface for our semantics operators [[-]]</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.Language.html">Language</a></td>
+  <td>Rules of our "layer logic"</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.PTrees.html">PTrees</a></td>
+  <td>Definitions and theorems related to <tt>PTree</tt>s
+    (finite maps over identifiers,
+    from Compcert's general-purpose libraries)</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.PTreeModules.html">PTreeModules</a></td>
+  <td>Implementation of modules as finite maps
+    from identifiers to function definitions</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.PTreeLayers.html">PTreeLayers</a></td>
+  <td>Implementation of layer specifications as finite maps
+    from identifiers to primitive specifications</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.PTreeSemantics.html">PTreeSemantics</a></td>
+  <td>Helpers for creating semantics operators involving
+    <tt>PTreeModule</tt>s and <tt>PTreeLayer</tt>s</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.logic.LayerLogicImpl.html">LayerLogicImpl</a></td>
+  <td>Soundness proof for the rules of our logic</td>
+</tr>
+</table>
+
+<h2>Connecting with CompcertX</h2>
+
+<table>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.CompcertStructures.html">CompcertStructures</a></td>
+  <td>Orders and lemmas about some of Compcert's data structures</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.ErrorMonad.html">ErrorMonad</a></td>
+  <td>Definitions related to Compcert's <tt>res</tt> monad
+    (similar to <tt>option</tt>, result or error)</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.LiftMem.html">LiftMem</a></td>
+  <td>Lift the Compcert memory model along a lens</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.LiftMemX.html">LiftMemX</a></td>
+  <td>Lift CompcertX's additional memory operations</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.LiftValueDomain.html">LiftValueDomain</a></td>
+  <td>Lift the <tt>mmatch</tt> predicate used by Compcert's value analysis</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.LiftValueAnalysis.html">LiftValueAnalysis</a></td>
+  <td>Lift more properties required by Compcert's value analysis</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.LiftDeadcodeproof.html">LiftDeadcodeproof</a></td>
+  <td>Lift the <tt>magree</tt> predicated used by Compcert's dead code elimination</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.AbstractData.html">AbstractData</a></td>
+  <td>Interface for the types of abstract data our layers are instrumented with</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.MemWithData.html">MemWithData</a></td>
+  <td>Construct a new Compcert memory model
+    by adding an abstract data field to an existing one</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.Stencil.html">Stencil</a></td>
+  <td>Interface of <em>stencils</em>: Compcert program templates we quantify over</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.StencilImpl.html">StencilImpl</a></td>
+  <td>Implementation of stencils</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.MakeProgram.html">MakeProgram</a></td>
+  <td>Interface of the <tt>make_program</tt> function,
+    which constructs Compcert programs from
+    a stencil, module, and layer interface</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.MakeProgramImpl.html">MakeProgramImpl</a></td>
+  <td>Implementation of <tt>make_program</tt></td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.GenSem.html">GenSem</a></td>
+  <td>General framework to build primitive specifications
+    from high-level Coq functions of various types</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compcertx.ClightModules.html">ClightModules</a></td>
+  <td>Use layer specifications to instantiate
+    Compcert external function semantics</td>
+</tr>
+</table>
+
+<h2>Instantiating the calculus for Certikos</h2>
+
+<p>
+The Certikos proofs predate the abstract layer calculus
+(and informed its design).
+Because of this,
+our initial instantiation of this calculus
+was designed to retrofit our existing code.
+In future work,
+we will attempt to refactor our proofs
+and this instantiation
+to fit the new framework better.
+For now,
+the following modules were designed to
+provide a compatibility interface,
+allowing us to reuse our existing proof
+with minimal effort.
+</p>
+
+<table>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.CompatData.html">CompatData</a></td>
+  <td>Compatibility for <tt>AbstractData</tt></td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.CompatPrimSem.html">CompatPrimSem</a></td>
+  <td>Concrete primitive specifications</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.CompatGenSem.html">CompatGenSem</a></td>
+  <td>Specialization of <tt>GenSem</tt> (see above)
+    to the concrete primitive specifications</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.CompatLayerDef.html">CompatLayerDef</a></td>
+  <td>Definition of our layer specifications
+    (<tt>PTreeLayer</tt>s of <tt>CompatPrimSem</tt>s,
+    augmented with memory accessors)</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.CompatLayerFacts.html">CompatLayerFacts</a></td>
+  <td>Some properties of our concrete layer specifications</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.CompatLayerInvariants.html">CompatLayerInvariants</a></td>
+  <td>Invariant-related properties of the concrete layer specifications</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.CompatSemantics.html">CompatSemantics</a></td>
+  <td>Building semantics operators operating on the concrete layer specifications</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.CompatLayers.html">CompatLayers</a></td>
+  <td>Bundle of all Coq libraries related to the concrete layer specifications</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.CompatExternalCalls.html">CompatExternalCalls</a></td>
+  <td>Building Compcert external function semantics from
+    concrete layer specifications</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.CompatClightSem.html">CompatClightSem</a></td>
+  <td>Semantics of ClightX(L)</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.I64Layer.html">I64Layer</a></td>
+  <td>Generic layer specification fragment for the
+    64-bits integer manipulation primitives
+    which Compcert-generated code relies on</td>
+</tr>
+<tr>
+  <td class="vfile"><a href="html/liblayers.compat.I64LayerAutosim.html">I64LayerAutosim</a></td>
+  <td><tt>I64</tt> layer fragments always simulate one another</td>
+</tr>
+</table>
+
+</body>
+</html>

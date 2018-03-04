@@ -1,0 +1,60 @@
+This is the CertiKOS project.
+
+==============================================================================
+Check the proof:
+
+1. System requiremenets:  Coq 8.4pl4
+
+2. Configure CompCertX: 
+
+   > ./configure [options] target
+
+   For exmaple, to configure the CompCertX to x86 32 bit linux,
+   one can run:
+
+   > ./configure ia32-linux
+
+   To get more helps about configuration, simply type: 
+   > ./configure
+
+3. Check the proofs:
+
+   > make
+
+   Since the compilation is very time consuming (around a few hours),
+   one can check the proofs with multi-thread support:
+
+   > make -j12
+
+   It will check the proofs with 12 threads.
+ 
+==============================================================================
+The directory structure:
+
+
+1. /mcertikos/security:
+      The security related proofs for mCertiKOS
+
+2. /mcertikos/policy:
+      The security policy examples used in the paper
+
+3. /mcertikos/*: 
+      Other mCeritkos related proofs.
+	      
+4. /compcert:
+
+      The Compcert certified compiler, modified for our purposes. 
+
+5. /compcertx:
+
+      CompcertX per-function compiler (eventually, per-module
+      compiler), built on top of our modified Compcert.
+
+6. /liblayers:
+
+      Generic Coq library for layered verification. This include the abstract
+      framework for layers and modules. Most of it is only loosely coupled
+      with Compcert, however there are specific instantiations of the layer
+      logic which use the semantics of Clight and Asm, as defined in Compcert.
+      Using those, we can recast the correctness theorem of CompcertX in terms
+      of the abstract framework.

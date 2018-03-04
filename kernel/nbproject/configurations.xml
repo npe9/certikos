@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="boot">
+        <df name="boot1">
+          <in>boot1main.c</in>
+        </df>
+        <df name="lib">
+          <in>biosdisk.c</in>
+          <in>console.c</in>
+          <in>cprintf.c</in>
+          <in>debug.c</in>
+          <in>fs.c</in>
+          <in>printfmt.c</in>
+          <in>string.c</in>
+          <in>video.c</in>
+        </df>
+        <df name="loader">
+          <in>loader.c</in>
+        </df>
+      </df>
+      <df name="sys">
+        <df name="dev">
+          <in>pmap.c</in>
+          <in>tsc.c</in>
+        </df>
+        <df name="kern">
+          <in>unimplemented.c</in>
+        </df>
+        <df name="lib">
+          <in>seg.c</in>
+          <in>string.c</in>
+          <in>user.c</in>
+          <in>x86.c</in>
+        </df>
+        <df name="preinit">
+          <df name="dev">
+            <in>ahci.c</in>
+            <in>console.c</in>
+            <in>disk.c</in>
+            <in>intr.c</in>
+            <in>pci.c</in>
+            <in>pic.c</in>
+            <in>serial.c</in>
+            <in>timer.c</in>
+            <in>tsc.c</in>
+            <in>vmx_drv.c</in>
+          </df>
+          <df name="lib">
+            <in>debug.c</in>
+            <in>dprintf.c</in>
+            <in>elf.c</in>
+            <in>mboot.c</in>
+            <in>pmap.c</in>
+            <in>printfmt.c</in>
+            <in>seg.c</in>
+            <in>string.c</in>
+            <in>timing.c</in>
+            <in>trap.c</in>
+            <in>types.c</in>
+            <in>video.c</in>
+            <in>vmx_x86.c</in>
+            <in>x86.c</in>
+          </df>
+          <in>preinit.c</in>
+        </df>
+      </df>
+      <df name="user">
+        <df name="idle">
+          <in>idle.c</in>
+        </df>
+        <df name="lib">
+          <in>atoi.c</in>
+          <in>debug.c</in>
+          <in>printf.c</in>
+          <in>printfmt.c</in>
+          <in>proc.c</in>
+          <in>spinlock.c</in>
+          <in>string.c</in>
+          <in>sysenter.c</in>
+        </df>
+        <df name="pingpong">
+          <in>ding.c</in>
+          <in>ping.c</in>
+          <in>pong.c</in>
+        </df>
+        <df name="profile">
+          <in>dummy.c</in>
+          <in>unit.c</in>
+        </df>
+        <df name="vmm">
+          <df name="dev">
+            <df name="i8042">
+              <in>kbd.c</in>
+              <in>ps2.c</in>
+            </df>
+            <df name="i8254">
+              <in>pit.c</in>
+            </df>
+            <df name="i8259">
+              <in>pic.c</in>
+            </df>
+            <df name="nvram">
+              <in>nvram.c</in>
+            </df>
+            <df name="serial">
+              <in>serial.c</in>
+            </df>
+            <df name="virtio">
+              <in>pci.c</in>
+              <in>virtio.c</in>
+              <in>virtio_blk.c</in>
+            </df>
+          </df>
+          <df name="svm">
+            <in>svm.c</in>
+          </df>
+          <df name="vmx">
+            <in>vmx.c</in>
+          </df>
+          <in>main.c</in>
+          <in>vmm.c</in>
+          <in>vmm_dev.c</in>
+        </df>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+      </makefileType>
+      <item path="boot/boot1/boot1main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="boot/lib/biosdisk.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="boot/lib/console.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="boot/lib/cprintf.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="boot/lib/debug.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="boot/lib/fs.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="boot/lib/printfmt.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="boot/lib/string.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="boot/lib/video.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="boot/loader/loader.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/dev/pmap.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/dev/tsc.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/kern/unimplemented.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/lib/seg.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/lib/string.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/lib/user.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/lib/x86.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/dev/ahci.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/dev/console.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/dev/disk.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/dev/intr.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/dev/pci.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/dev/pic.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/dev/serial.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/dev/timer.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/dev/tsc.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/dev/vmx_drv.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/debug.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/dprintf.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/elf.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/mboot.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/pmap.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/printfmt.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/seg.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/string.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/timing.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/trap.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/types.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/video.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/vmx_x86.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/lib/x86.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="sys/preinit/preinit.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/idle/idle.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/lib/atoi.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/lib/debug.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/lib/printf.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/lib/printfmt.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/lib/proc.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/lib/spinlock.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/lib/string.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/lib/sysenter.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/pingpong/ding.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/pingpong/ping.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/pingpong/pong.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/profile/dummy.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/profile/unit.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/dev/i8042/kbd.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/dev/i8042/ps2.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/dev/i8254/pit.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/dev/i8259/pic.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/dev/nvram/nvram.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/dev/serial/serial.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/dev/virtio/pci.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/dev/virtio/virtio.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/dev/virtio/virtio_blk.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/svm/svm.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/vmm.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/vmm_dev.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="user/vmm/vmx/vmx.c" ex="false" tool="0" flavor2="2">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
